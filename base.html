@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpusIA - Plano de Desenvolvimento Individual</title>
+    <link rel="stylesheet" href="css/landing_page/base.css">
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+
+    <!-- Google Fonts: Roboto (fallback) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="wrapper-header">
+      <a class="header-logo" href="inicio.html">
+        <img src="images/logo.png" alt="Logo OpusIA">
+        <span class="nav__brand">OpusIA</span>
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <button class="nav__toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="nav-panel">
+          <span class="sr-only">Alternar navegação</span>
+          <span class="nav__toggle-box" aria-hidden="true">
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+          </span>
+        </button>
+        <div class="nav__panel" id="nav-panel" data-nav-panel>
+          <ul class="nav__menu" id="navMenu">
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+          <div class="nav__cta">
+            <button onclick="window.location.href=''" class="btn btn--ghost">Login</button>
+            <button onclick="window.location.href=''" class="btn btn--primary">Começar Grátis</button>
+          </div>
+        </div>
+      </nav>
+      <div class="nav__overlay" data-nav-overlay></div>
+    </div>
+  </header>
+    <main role="main">
+        <!-- Conteúdo principal -->
+    </main>
+
+<!-- Footer -->
+  <footer>
+    <p>© 2025 OpusIA. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+  (function () {
+    const toggle = document.querySelector('[data-nav-toggle]');
+    const panel = document.querySelector('[data-nav-panel]');
+    const overlay = document.querySelector('[data-nav-overlay]');
+    const header = document.querySelector('header');
+    const root = document.documentElement;
+    if (!toggle || !panel || !overlay) {
+      return;
+    }
+
+    const updateNavOffset = () => {
+      if (!header) {
+        return;
+      }
+      const offset = header.offsetHeight + 16;
+      root.style.setProperty('--mobile-nav-offset', `${offset}px`);
+    };
+    updateNavOffset();
+
+    const closeMenu = () => {
+      panel.classList.remove('is-open');
+      overlay.classList.remove('is-active');
+      document.body.classList.remove('nav-is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    const handleToggle = () => {
+      const isOpen = panel.classList.toggle('is-open');
+      overlay.classList.toggle('is-active', isOpen);
+      document.body.classList.toggle('nav-is-open', isOpen);
+      toggle.classList.toggle('is-active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    toggle.addEventListener('click', handleToggle);
+    overlay.addEventListener('click', closeMenu);
+    panel.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('resize', () => {
+      updateNavOffset();
+      if (window.innerWidth > 960 && panel.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && panel.classList.contains('is-open')) {
+        closeMenu();
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

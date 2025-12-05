@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpusIA - Início</title>
+  <link rel="stylesheet" href="css/landing_page/base.css">
+  <link rel="stylesheet" href="css/landing_page/home/inicio.css">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="wrapper-header">
+      <a class="header-logo" href="inicio.html">
+        <img src="images/logo.png" alt="Logo OpusIA">
+        <span class="nav__brand">OpusIA</span>
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <button class="nav__toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="nav-panel">
+          <span class="sr-only">Alternar navegação</span>
+          <span class="nav__toggle-box" aria-hidden="true">
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+          </span>
+        </button>
+        <div class="nav__panel" id="nav-panel" data-nav-panel>
+          <ul class="nav__menu" id="navMenu">
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+          <div class="nav__cta">
+            <button onclick="window.location.href='login.html'" class="btn btn--ghost">Login</button>
+            <button onclick="window.location.href='cadastro.html'" class="btn btn--primary">Começar Grátis</button>
+          </div>
+        </div>
+      </nav>
+      <div class="nav__overlay" data-nav-overlay></div>
+    </div>
+  </header>
+  <main role="main">
+    <section class="hero">
+      <div class="hero__content">
+        <span class="hero__kicker">PDI guiado por IA</span>
+        <h1 class="hero__title">O plano que guia seu futuro</h1>
+        <p class="hero__subtitle">O OpusIA não entrega um PDI comum: nossa inteligência cruza tendências de mercado, IA e seus objetivos para orientar cada passo e manter você na dianteira.</p>
+        <div class="hero__actions">
+          <button class="btn btn--primary">Criar meu plano OpusIA</button>
+          <button class="btn btn--secondary">Ver como funciona</button>
+        </div>
+        <div class="hero__metrics">
+          <div class="metric-card">
+            <strong>+5.200</strong>
+            <span>Usuários ativos</span>
+          </div>
+          <div class="metric-card">
+            <strong>92%</strong>
+            <span>Satisfação</span>
+          </div>
+          <div class="metric-card">
+            <strong>4.8</strong>
+            <span>Avaliação média</span>
+          </div>
+        </div>
+      </div>
+      <form
+        class="hero__form"
+        id="heroForm"
+        data-hero-form
+        data-email-service="service_kk9s49c"
+        data-email-template="template_lj9fjy8"
+        data-email-public-key="5fseHgTdD-llr6S4e"
+      >
+        <h3>Comece Agora</h3>
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required autocomplete="name">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+        <div class="hero__form-status" data-form-status hidden aria-live="polite"></div>
+        <button type="submit" class="btn btn--primary btn--block" data-submit>Receber Acesso</button>
+      </form>
+    </section>
+
+    <section class="section video-section">
+      <div class="video-highlight">
+        <div class="video-highlight__content">
+          <span class="chip">Vídeo destaque</span>
+          <h2>Veja como o OpusIA guia seu futuro</h2>
+          <p>Assista ao overview de 90 segundos para entender como combinamos IA, dados de empregabilidade e acompanhamento humano para criar um PDI vivo que antecipa o mercado.</p>
+        </div>
+        <div class="video-highlight__player">
+          <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qgHtQ7QoSaU?si=uJeMwnSYotFUrExC&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__header">
+        <div>
+          <h2 class="section__title">Por que o OpusIA vai além de um PDI comum?</h2>
+          <p class="section__subtitle">Transformamos diagnóstico, planejamento e execução em um plano vivo que antecipa o impacto da IA na sua carreira.</p>
+        </div>
+        <span class="chip">Novo</span>
+      </div>
+      <div class="grid grid--three">
+        <div class="card">
+          <h3 class="card__title">Radar de Competências Futuras</h3>
+          <p>Análise 360° com IA e dados de empregabilidade para revelar os gaps críticos antes da concorrência.</p>
+          <div class="card__meta">
+            <span>Grátis</span>
+            <span class="pill pill--success">Incluso</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Metas guiadas pelo mercado</h3>
+          <p>Objetivos SMART conectados às habilidades que ganham valor com o avanço da IA.</p>
+          <div class="card__meta">
+            <span>Pro</span>
+            <span class="pill pill--warning">Premium</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Acompanhamento adaptativo</h3>
+          <p>Relatórios de progresso e alertas inteligentes que recalculam a rota sempre que o mercado muda.</p>
+          <div class="card__meta">
+            <span>Pro</span>
+            <span class="pill pill--success">Incluso</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <h2 class="section__title">Como o OpusIA guia seu futuro</h2>
+      <div class="timeline">
+        <div class="timeline__item">
+          <h3 class="timeline__title">1. Diagnóstico preditivo</h3>
+          <p class="timeline__desc">Assessment com IA cruza seu perfil com tendências tecnológicas para mapear riscos e oportunidades.</p>
+        </div>
+        <div class="timeline__item">
+          <h3 class="timeline__title">2. Planejamento inteligente</h3>
+          <p class="timeline__desc">Metas e trilhas priorizam as competências que ganharão valor na nova economia.</p>
+        </div>
+        <div class="timeline__item">
+          <h3 class="timeline__title">3. Execução assistida</h3>
+          <p class="timeline__desc">Tarefas com lembretes, mentorias e experiências práticas sugeridas pela nossa IA.</p>
+        </div>
+        <div class="timeline__item">
+          <h3 class="timeline__title">4. Revisão estratégica</h3>
+          <p class="timeline__desc">OpusIA acompanha resultados e ajusta o plano automaticamente para manter você competitivo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section__title">Profissionais que já lideram com a IA</h2>
+      <div class="testimonials">
+        <blockquote>
+          "Não é só uma planilha de metas. O OpusIA me mostrou quais habilidades o mercado vai exigir e me guiou passo a passo."
+          <cite>— Ana Silva, Gerente de Projetos</cite>
+        </blockquote>
+        <blockquote>
+          "A cada atualização da IA no meu setor, recebo novas ações antes que o impacto chegue. Isso é diferencial competitivo."
+          <cite>— Carlos Mendes, Desenvolvedor</cite>
+        </blockquote>
+        <blockquote>
+          "Consigo acompanhar minha equipe e provar evolução com dados. É o PDI que precisamos para o futuro."
+          <cite>— Luísa Costa, RH</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <h2>Pronto para ficar à frente da IA no mercado?</h2>
+      <p>Comece seu plano guiado pelo OpusIA e antecipe os próximos passos da sua carreira.</p>
+      <button class="btn btn--secondary">Criar meu PDI inteligente</button>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 OpusIA. Todos os direitos reservados.</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+  <script src="js/hero-form.js" defer></script>
+  <script src="js/nav.js"></script>
+  <script>window.OpusLayout && window.OpusLayout.initNav && window.OpusLayout.initNav();</script>
+</body>
+</html>
