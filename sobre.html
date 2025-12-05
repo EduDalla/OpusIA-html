@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OpusIA - Sobre</title>
+  <link rel="stylesheet" href="css/landing_page/base.css">
+  <link rel="stylesheet" href="css/landing_page/home/sobre.css">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="wrapper-header">
+      <a class="header-logo" href="inicio.html">
+        <img src="images/logo.png" alt="Logo OpusIA">
+        <span class="nav__brand">OpusIA</span>
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <button class="nav__toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="nav-panel">
+          <span class="sr-only">Alternar navegação</span>
+          <span class="nav__toggle-box" aria-hidden="true">
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+          </span>
+        </button>
+        <div class="nav__panel" id="nav-panel" data-nav-panel>
+          <ul class="nav__menu" id="navMenu">
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+          <div class="nav__cta">
+            <button onclick="window.location.href='login.html'" class="btn btn--ghost">Login</button>
+            <button onclick="window.location.href='cadastro.html'" class="btn btn--primary">Começar Grátis</button>
+          </div>
+        </div>
+      </nav>
+      <div class="nav__overlay" data-nav-overlay></div>
+    </div>
+  </header>
+  <main role="main">
+    <section class="section">
+      <h1 class="section__title">Sobre a OpusIA</h1>
+      <p class="section__subtitle">
+        Somos o estúdio de PDIs inteligentes que guia profissionais para <strong>liderar o futuro com a IA</strong>.
+        Cruzamos diagnóstico de competências, dados de empregabilidade e tendências tecnológicas para transformar planos individuais em estratégias de carreira vivas.
+      </p>
+      <div class="grid grid--two">
+        <div>
+          <h3 style="color: var(--color-brand-700); margin-bottom: 0.5rem;">Nossa Missão</h3>
+          <p>Capacitar pessoas a tomarem as rédeas da própria carreira com clareza, confiança e resultados mensuráveis antes que a automação imponha as mudanças.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--color-brand-700); margin-bottom: 0.5rem;">Nossa Visão</h3>
+          <p>Ser o sistema de desenvolvimento que profissionais e empresas escolhem para se manter sempre um passo à frente da IA até 2030.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <h2 class="section__title">Nossos Valores</h2>
+      <div class="grid grid--three">
+        <div class="card">
+          <div class="card__icon"><i data-feather="target"></i></div>
+          <h3 class="card__title">Foco no Resultado</h3>
+          <p class="card__desc">Cada recomendação conecta metas claras com impactos reais na carreira e no negócio.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i data-feather="users"></i></div>
+          <h3 class="card__title">Empatia e Acessibilidade</h3>
+          <p class="card__desc">Acreditamos que toda pessoa merece uma ferramenta poderosa para enfrentar a transformação digital.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i data-feather="zap"></i></div>
+          <h3 class="card__title">Inovação Contínua</h3>
+          <p class="card__desc">Usamos IA, ciência comportamental e dados de mercado para projetar planos que se adaptam ao futuro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <h2 class="section__title">Nossa Equipe</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="https://avatars.githubusercontent.com/u/62569881?s=400&u=fc8de93f13460b7892c6d6ccb80e1f3050508880&v=4" alt="Eduardo Dallabella Lima">
+          <h4>Eduardo Dallabella Lima</h4>
+          <p>CEO & Desenvolvedor</p>
+        </div>
+        <div class="team-card">
+          <img src="images/heloisa.png" alt="Heloísa Real">
+          <h4>Heloísa Real</h4>
+          <p>CEO & Design</p>
+        </div>
+        <div class="team-card">
+          <img src="images/mariana.png" alt="Mariana">
+          <h4>Mariana</h4>
+          <p>CEO & Agilista</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 OpusIA. Todos os direitos reservados.</p>
+  </footer>
+  <script src="js/nav.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    window.OpusLayout && window.OpusLayout.initNav && window.OpusLayout.initNav();
+    window.feather && window.feather.replace();
+  </script>
+</body>
+</html>

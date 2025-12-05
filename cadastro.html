@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cadastre-se - OpusIA</title>
+    <link rel="stylesheet" href="css/landing_page/base.css">
+    <link rel="stylesheet" href="css/landing_page/home/sign/cadastro.css">
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <header>
+    <div class="wrapper-header">
+      <a class="header-logo" href="inicio.html">
+        <img src="images/logo.png" alt="Logo OpusIA">
+        <span class="nav__brand">OpusIA</span>
+      </a>
+      <nav class="nav" aria-label="Menu principal">
+        <button class="nav__toggle" data-nav-toggle type="button" aria-expanded="false" aria-controls="nav-panel">
+          <span class="sr-only">Alternar navegação</span>
+          <span class="nav__toggle-box" aria-hidden="true">
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+            <span class="nav__toggle-line"></span>
+          </span>
+        </button>
+        <div class="nav__panel" id="nav-panel" data-nav-panel>
+          <ul class="nav__menu" id="navMenu">
+            <li><a href="inicio.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+          <div class="nav__cta">
+            <button onclick="window.location.href='login.html'" class="btn btn--ghost">Login</button>
+            <button onclick="window.location.href='cadastro.html'" class="btn btn--primary btn--primary-disabled">Começar Grátis</button>
+          </div>
+        </div>
+      </nav>
+      <div class="nav__overlay" data-nav-overlay></div>
+    </div>
+  </header>
+  <main role="main">
+    <div class="signup-container">
+        <div class="signup-header">
+            <img onclick="window.location.href='inicio.html'" src="images/logo.png" alt="Logo OpusIA">
+            <h1>Crie sua conta grátis</h1>
+            <p>Comece seu PDI em menos de 2 minutos.</p>
+        </div>
+
+        <div class="signup-card">
+            <form class="signup-form" action="#" method="post">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" placeholder="João Silva" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" name="sobrenome" placeholder="da Costa" required>
+                    </div>
+                    <div class="form-group full">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="joao@exemplo.com" required>
+                    </div>
+                    <div class="form-group full">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Mínimo 8 caracteres" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                        <label for="cargo">Cargo</label>
+                        <input type="text" id="cargo" name="cargo" placeholder="Ex: Desenvolvedor">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Opcional">
+                    </div>
+                </div>
+
+                <div class="form-terms">
+                    <input type="checkbox" id="terms" name="terms" value="1" required>
+                    <label for="terms">
+                        Li e concordo com os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--block">
+                    Criar Conta Grátis
+                </button>
+            </form>
+
+            <div class="divider"><span>ou</span></div>
+
+            <button class="btn btn--secondary btn--block">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.501 12.233c0-.743-.065-1.486-.198-2.212H12v4.183h5.854c-.253 1.314-1.024 2.426-2.153 3.17v2.722h3.487c2.04-1.878 3.213-4.643 3.213-7.863Z" fill="#4285F4"/>
+                    <path d="M12 23c2.907 0 5.346-1.01 7.13-2.735l-3.487-2.722c-.967.648-2.203 1.03-3.643 1.03-2.797 0-5.167-1.887-6.014-4.424H2.368v2.78C4.14 20.446 7.79 23 12 23Z" fill="#34A853"/>
+                    <path d="M5.986 13.576a6.85 6.85 0 0 1-.378-2.176c0-.756.136-1.49.378-2.176V6.444H2.368A11.018 11.018 0 0 0 1 12c0 1.85.456 3.594 1.368 5.112l3.618-2.536Z" fill="#FBBC05"/>
+                    <path d="M12 4.5c1.58 0 3 .572 4.124 1.69l3.078-3.078C17.346.887 14.907 0 12 0 7.79 0 4.14 2.554 2.368 6.444l3.618 2.78C6.833 6.687 9.203 4.5 12 4.5Z" fill="#EA4335"/>
+                </svg>
+                Cadastrar com Google
+            </button>
+
+            <div class="signup-footer">
+                Já tem conta? <a href="login.html">Faça login</a>
+            </div>
+        </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 OpusIA. Todos os direitos reservados.</p>
+  </footer>
+  <script src="js/nav.js"></script>
+  <script>
+    window.OpusLayout && window.OpusLayout.initNav && window.OpusLayout.initNav();
+    window.feather && window.feather.replace();
+  </script>
+</body>
+</html>
