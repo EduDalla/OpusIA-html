@@ -1,48 +1,59 @@
-# OpusIA – Landing Page Estática
+# OpusIA – Landing Page Institucional
 
-Este repositório contém a versão estática da landing page do OpusIA preparada para ser servida via GitLab Pages. Todo o conteúdo é escrito em HTML/CSS/JS vanilla e cada arquivo `.html` já traz o cabeçalho/rodapé completos, o que permite executar qualquer página de forma independente.
+Projeto estático em HTML/CSS/JS que apresenta o OpusIA, destacando seu produto de PDI guiado por IA. Cada página possui cabeçalho e rodapé completos, o que permite abrir qualquer arquivo `.html` de forma independente (inclusive diretamente via `file://`).
 
-## Estrutura
+## Principais seções
+
+- **Início (`inicio.html`)** – hero com CTA, métricas, vídeo, vitrine de funcionalidades e depoimentos.
+- **Sobre, Serviços e Contato** – páginas dedicadas com o mesmo layout global (`base.html` como referência).
+- **Cadastro/Login** – telas estáticas para fluxo de autenticação básico.
+- **Formulários com EmailJS** – hero e página de contato disparam e-mails diretamente para `eduardodallabella@gmail.com`.
+
+## Tecnologias
+
+- HTML semântico e responsivo.
+- CSS modular (arquivos em `css/landing_page/...`).
+- JavaScript vanilla para navegação (`js/nav.js`), formulário do hero (`js/hero-form.js`) e formulário de contato (`js/contact-form.js`).
+- EmailJS para envio de leads e mensagens sem backend.
+
+## Estrutura do projeto
 
 ```
-├── *.html                # Páginas (Início, Sobre, Serviços, Contato, Login, Cadastro, layout base)
-├── css/                  # Estilos globais e específicos
-├── fonts/, images/, js/  # Assets utilizados na landing page
-└── .gitlab-ci.yml        # Pipeline para gerar o site estático para o GitLab Pages
+├── *.html                 # Páginas independentes (Início, Sobre, Serviços, Contato etc.)
+├── css/
+│   └── landing_page/...   # Base global + estilos específicos das páginas
+├── js/
+│   ├── nav.js             # Menu responsivo
+│   ├── hero-form.js       # Formulário do hero em inicio.html
+│   └── contact-form.js    # Formulário da página de contato
+├── images/, fonts/        # Assets estáticos
+└── .gitlab-ci.yml         # Pipeline para publicar no GitLab Pages
 ```
 
-O arquivo `base.html` serve apenas como referência do layout global. Para manter a consistência entre as páginas, cada uma replica o cabeçalho, o rodapé e importa o script `js/nav.js`, responsável por animar o menu responsivo (hambúrguer).
+## Executando localmente
 
-## Desenvolvimento local
+1. Clone o repositório e acesse a raiz.
+2. Sirva com qualquer servidor estático (`npx serve .`, `python -m http.server`) **ou** abra os `.html` diretamente no navegador.
+3. Inicie por `inicio.html` e navegue pelas demais páginas pelo menu.
 
-1. Clone o repositório e abra o diretório raiz.
-2. Sirva os arquivos com qualquer servidor estático (ex.: `npx serve .`, `python -m http.server`) **ou** abra os `.html` diretamente no navegador — não há dependência de `fetch`, então tudo funciona em `file://`.
-3. Acesse `inicio.html` e utilize o menu para navegar entre as demais páginas.
+## Configurando o EmailJS
+
+1. Crie um serviço no painel do [EmailJS](https://www.emailjs.com/) (ex.: Gmail ou SMTP próprio).
+2. Crie dois templates (um para o hero e outro para o contato) ou reutilize o mesmo, certificando-se de expor os campos:
+   - `from_name`, `from_email`, `reply_to`, `hero_message` (hero)  
+   - `contact_subject`, `contact_message`, `to_email` (contato)
+3. Copie os IDs do serviço, template e `publicKey` gerados.
+4. Atualize os atributos `data-email-service`, `data-email-template` e `data-email-public-key` nos formulários:
+   - Hero: `inicio.html`, linhas 63–67.
+   - Contato: `contato.html`, linhas 50–79 (também aceita `data-recipient-email`).
+5. Publique as alterações. Os scripts `js/hero-form.js` e `js/contact-form.js` já cuidam da validação, feedback visual e envio.
 
 ## Deploy no GitLab Pages
 
-O arquivo `.gitlab-ci.yml` já prepara o projeto para o GitLab Pages:
+O arquivo `.gitlab-ci.yml` copia automaticamente `*.html`, `css`, `js`, `images` e `fonts` para a pasta `public`. Basta enviar o branch `main`/`master` para o GitLab que a pipeline publica o site em `https://<usuario>.gitlab.io/<projeto>/`.
 
-```yaml
-pages:
-  stage: deploy
-  script:
-    - mkdir -p public
-    - cp -r css fonts images js *.html public/
-  artifacts:
-    paths:
-      - public
-  only:
-    - main
-    - master
-```
+## Personalizações rápidas
 
-Basta criar o projeto no GitLab, adicionar este repositório e enviar o branch `main` ou `master`. A pipeline criará a pasta `public` com todos os arquivos necessários e o GitLab Pages publicará automaticamente em `https://<usuario>.gitlab.io/<projeto>/`.
-
-## Personalização
-
-- Atualize o layout global em `base.html` para refletir novas seções do menu ou CTAs.
-- Adicione novas páginas criando um arquivo `.html` que importe `css/landing_page/base.css`, seus estilos específicos e o script `js/nav.js`.
-- Inclua assets adicionais em `images/`, `css/` ou `js/` e eles serão copiados automaticamente para o deploy.
-
-Sinta-se à vontade para adaptar cores, textos e animações conforme a evolução do projeto.
+- Ajuste navegação/global em `base.html`.
+- Crie novas páginas duplicando um `.html` existente e atualizando o CSS específico.
+- Substitua textos, imagens e CTAs conforme a evolução do produto.
